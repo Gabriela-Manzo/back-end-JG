@@ -3,9 +3,8 @@ const { io } = require('../http')
 let users = []
 
 const messages = {
-  aula: [],
-  exercicios: [],
-  duvidas: [],
+  Aula: [],
+  Exercicios: [],
   
 }
 
@@ -18,6 +17,7 @@ io.on('connection', socket => {
     users.push(user);
     io.emit('new.user', users);
   });
+
 
   socket.on("join.room", (roomName, cb) => {
     socket.join(roomName);
